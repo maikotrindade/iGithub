@@ -6,13 +6,14 @@
 //  Copyright © 2017 Maiko Trindade. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "HomeViewController.h"
+#import "LoginViewController.h"
 
-@interface ViewController ()
+@interface HomeViewController ()
 
 @end
 
-@implementation ViewController
+@implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
