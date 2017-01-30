@@ -16,6 +16,7 @@
 		471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DB1E3697FE00C680AA /* Assets.xcassets */; };
 		471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */; };
 		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
+		47AE002E1E3FE8F10037824C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AE002D1E3FE8F10037824C /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,8 @@
 		471F48E01E3697FE00C680AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInfoViewController.h; sourceTree = "<group>"; };
 		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
+		47AE002D1E3FE8F10037824C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		47AE002F1E3FE9110037824C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		CDD0ABBF2A474521A21FE28D /* libPods-iGitHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iGitHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,7 +120,9 @@
 				471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */,
 				471F48E01E3697FE00C680AA /* Info.plist */,
 				471F48D81E3697FE00C680AA /* iGitHub.xcdatamodeld */,
+				47AE002C1E3FE8BE0037824C /* models */,
 				4767192C1E3BE2CF006B9344 /* login */,
+				47AE00281E3FE5420037824C /* utility */,
 				471F48CC1E3697FD00C680AA /* Supporting Files */,
 			);
 			path = iGitHub;
@@ -140,6 +145,22 @@
 				4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */,
 			);
 			name = login;
+			sourceTree = "<group>";
+		};
+		47AE00281E3FE5420037824C /* utility */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = utility;
+			sourceTree = "<group>";
+		};
+		47AE002C1E3FE8BE0037824C /* models */ = {
+			isa = PBXGroup;
+			children = (
+				47AE002D1E3FE8F10037824C /* User.m */,
+				47AE002F1E3FE9110037824C /* User.h */,
+			);
+			name = models;
 			sourceTree = "<group>";
 		};
 		94755C22B9FC01F8EEFE0726 /* Pods */ = {
@@ -320,6 +341,7 @@
 			files = (
 				471F48DA1E3697FE00C680AA /* iGitHub.xcdatamodeld in Sources */,
 				471F48D41E3697FD00C680AA /* HomeViewController.m in Sources */,
+				47AE002E1E3FE8F10037824C /* User.m in Sources */,
 				471F48D11E3697FD00C680AA /* AppDelegate.m in Sources */,
 				471F48CE1E3697FD00C680AA /* main.m in Sources */,
 				4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */,

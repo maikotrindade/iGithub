@@ -13,7 +13,7 @@
 
 @end
 
-@implementation GetInfoViewController
+@implementation GetInfoViewController 
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -28,14 +28,38 @@
 }
 
 - (void) getInfo {
-    
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:@"https://api.github.com/users/maikotrindade" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSLog(@"JSON: %@", responseObject);
+        NSDictionary *jsonDict = (NSDictionary *) responseObject;
+        
     } failure:^(NSURLSessionTask *operation, NSError *error) {
-        NSLog(@"Error: %@", error);
+        [self showErrorMessage];
     }];
+}
+
+-(void) showErrorMessage {
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:@"Title"
+                                 message:@"Message"
+                                 preferredStyle:UIAlertControllerStyleAlert];
     
+    UIAlertAction* yesButton = [UIAlertAction
+                                actionWithTitle:@"Yes, please"
+                                style:UIAlertActionStyleDefault
+                                handler:^(UIAlertAction * action) {
+                                }];
+    
+    UIAlertAction* noButton = [UIAlertAction
+                               actionWithTitle:@"No, thanks"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                               }];
+    
+    [alert addAction:yesButton];
+    [alert addAction:noButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 @end
