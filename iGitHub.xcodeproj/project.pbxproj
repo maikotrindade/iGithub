@@ -14,7 +14,7 @@
 		471F48DA1E3697FE00C680AA /* iGitHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 471F48D81E3697FE00C680AA /* iGitHub.xcdatamodeld */; };
 		471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DB1E3697FE00C680AA /* Assets.xcassets */; };
 		471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */; };
-		4767192F1E3BE3E6006B9344 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* LoginViewController.m */; };
+		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		471F48DB1E3697FE00C680AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		471F48DE1E3697FE00C680AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		471F48E01E3697FE00C680AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4767192D1E3BE3E6006B9344 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
-		4767192E1E3BE3E6006B9344 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInfoViewController.h; sourceTree = "<group>"; };
+		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +89,8 @@
 			children = (
 				471F48D21E3697FD00C680AA /* HomeViewController.h */,
 				471F48D31E3697FD00C680AA /* HomeViewController.m */,
-				4767192D1E3BE3E6006B9344 /* LoginViewController.h */,
-				4767192E1E3BE3E6006B9344 /* LoginViewController.m */,
+				4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */,
+				4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 				471F48D41E3697FD00C680AA /* HomeViewController.m in Sources */,
 				471F48D11E3697FD00C680AA /* AppDelegate.m in Sources */,
 				471F48CE1E3697FD00C680AA /* main.m in Sources */,
-				4767192F1E3BE3E6006B9344 /* LoginViewController.m in Sources */,
+				4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

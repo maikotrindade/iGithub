@@ -7,7 +7,7 @@
 //
 
 #import "HomeViewController.h"
-#import "LoginViewController.h"
+#import "GetInfoViewController.h"
 
 @interface HomeViewController ()
 
