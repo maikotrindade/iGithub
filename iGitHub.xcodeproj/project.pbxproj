@@ -207,7 +207,6 @@
 				TargetAttributes = {
 					471F48C81E3697FD00C680AA = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = A9H6F32TXZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -444,7 +443,7 @@
 			baseConfigurationReference = 04200B732057E4AD0B935F03 /* Pods-iGitHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A9H6F32TXZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iGitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.maikotrindade.iGitHub;
@@ -457,7 +456,7 @@
 			baseConfigurationReference = 3B3BADB170D62637BB0EC63A /* Pods-iGitHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = A9H6F32TXZ;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = iGitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.maikotrindade.iGitHub;
