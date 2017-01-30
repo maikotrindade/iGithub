@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4714A88C1E3FDF7E00D8CB1D /* libPods-iGitHub.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4714A8861E3FDEF700D8CB1D /* libPods-iGitHub.a */; };
 		471F48CE1E3697FD00C680AA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 471F48CD1E3697FD00C680AA /* main.m */; };
 		471F48D11E3697FD00C680AA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 471F48D01E3697FD00C680AA /* AppDelegate.m */; };
 		471F48D41E3697FD00C680AA /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 471F48D31E3697FD00C680AA /* HomeViewController.m */; };
@@ -17,7 +18,40 @@
 		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		4714A8831E3FDEF700D8CB1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4714A87E1E3FDEF700D8CB1D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A9267EF5B7F0CA5A009AC8B7939B5BB3;
+			remoteInfo = AFNetworking;
+		};
+		4714A8851E3FDEF700D8CB1D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4714A87E1E3FDEF700D8CB1D /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D1668308C43DC73758FE90BD038B6FC4;
+			remoteInfo = "Pods-iGitHub";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
+		04200B732057E4AD0B935F03 /* Pods-iGitHub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGitHub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iGitHub/Pods-iGitHub.debug.xcconfig"; sourceTree = "<group>"; };
+		3B3BADB170D62637BB0EC63A /* Pods-iGitHub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iGitHub.release.xcconfig"; path = "Pods/Target Support Files/Pods-iGitHub/Pods-iGitHub.release.xcconfig"; sourceTree = "<group>"; };
+		4714A8641E3FDED600D8CB1D /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFHTTPSessionManager.h; path = Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		4714A8651E3FDED600D8CB1D /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFHTTPSessionManager.m; path = Pods/AFNetworking/AFNetworking/AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		4714A8661E3FDED600D8CB1D /* AFNetworking.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFNetworking.h; path = Pods/AFNetworking/AFNetworking/AFNetworking.h; sourceTree = "<group>"; };
+		4714A8671E3FDED600D8CB1D /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		4714A8681E3FDED600D8CB1D /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = Pods/AFNetworking/AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		4714A8691E3FDED600D8CB1D /* AFSecurityPolicy.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = Pods/AFNetworking/AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
+		4714A86A1E3FDED600D8CB1D /* AFSecurityPolicy.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFSecurityPolicy.m; path = Pods/AFNetworking/AFNetworking/AFSecurityPolicy.m; sourceTree = "<group>"; };
+		4714A86B1E3FDED600D8CB1D /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFURLRequestSerialization.h; path = Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		4714A86C1E3FDED600D8CB1D /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFURLRequestSerialization.m; path = Pods/AFNetworking/AFNetworking/AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		4714A86D1E3FDED600D8CB1D /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFURLResponseSerialization.h; path = Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		4714A86E1E3FDED600D8CB1D /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFURLResponseSerialization.m; path = Pods/AFNetworking/AFNetworking/AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		4714A86F1E3FDED600D8CB1D /* AFURLSessionManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AFURLSessionManager.h; path = Pods/AFNetworking/AFNetworking/AFURLSessionManager.h; sourceTree = "<group>"; };
+		4714A8701E3FDED600D8CB1D /* AFURLSessionManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = AFURLSessionManager.m; path = Pods/AFNetworking/AFNetworking/AFURLSessionManager.m; sourceTree = "<group>"; };
+		4714A87E1E3FDEF700D8CB1D /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
 		471F48C91E3697FD00C680AA /* iGitHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iGitHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		471F48CD1E3697FD00C680AA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		471F48CF1E3697FD00C680AA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -31,6 +65,7 @@
 		471F48E01E3697FE00C680AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInfoViewController.h; sourceTree = "<group>"; };
 		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
+		CDD0ABBF2A474521A21FE28D /* libPods-iGitHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iGitHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -38,17 +73,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4714A88C1E3FDF7E00D8CB1D /* libPods-iGitHub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4714A87F1E3FDEF700D8CB1D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4714A8841E3FDEF700D8CB1D /* libAFNetworking.a */,
+				4714A8861E3FDEF700D8CB1D /* libPods-iGitHub.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		471F48C01E3697FD00C680AA = {
 			isa = PBXGroup;
 			children = (
 				471F48CB1E3697FD00C680AA /* iGitHub */,
 				471F48CA1E3697FD00C680AA /* Products */,
+				94755C22B9FC01F8EEFE0726 /* Pods */,
+				F333BA0A6056E2EA4A5D3017 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -95,6 +142,37 @@
 			name = login;
 			sourceTree = "<group>";
 		};
+		94755C22B9FC01F8EEFE0726 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				04200B732057E4AD0B935F03 /* Pods-iGitHub.debug.xcconfig */,
+				3B3BADB170D62637BB0EC63A /* Pods-iGitHub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F333BA0A6056E2EA4A5D3017 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4714A87E1E3FDEF700D8CB1D /* Pods.xcodeproj */,
+				4714A8641E3FDED600D8CB1D /* AFHTTPSessionManager.h */,
+				4714A8651E3FDED600D8CB1D /* AFHTTPSessionManager.m */,
+				4714A8661E3FDED600D8CB1D /* AFNetworking.h */,
+				4714A8671E3FDED600D8CB1D /* AFNetworkReachabilityManager.h */,
+				4714A8681E3FDED600D8CB1D /* AFNetworkReachabilityManager.m */,
+				4714A8691E3FDED600D8CB1D /* AFSecurityPolicy.h */,
+				4714A86A1E3FDED600D8CB1D /* AFSecurityPolicy.m */,
+				4714A86B1E3FDED600D8CB1D /* AFURLRequestSerialization.h */,
+				4714A86C1E3FDED600D8CB1D /* AFURLRequestSerialization.m */,
+				4714A86D1E3FDED600D8CB1D /* AFURLResponseSerialization.h */,
+				4714A86E1E3FDED600D8CB1D /* AFURLResponseSerialization.m */,
+				4714A86F1E3FDED600D8CB1D /* AFURLSessionManager.h */,
+				4714A8701E3FDED600D8CB1D /* AFURLSessionManager.m */,
+				CDD0ABBF2A474521A21FE28D /* libPods-iGitHub.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -102,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 471F48E31E3697FE00C680AA /* Build configuration list for PBXNativeTarget "iGitHub" */;
 			buildPhases = (
+				82AD4D9ADDB4A64C16A53847 /* [CP] Check Pods Manifest.lock */,
 				471F48C51E3697FD00C680AA /* Sources */,
 				471F48C61E3697FD00C680AA /* Frameworks */,
 				471F48C71E3697FD00C680AA /* Resources */,
+				90173733A686E2BBB8B65EA3 /* [CP] Embed Pods Frameworks */,
+				08C8BA63ADD1096598654076 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -126,6 +207,7 @@
 				TargetAttributes = {
 					471F48C81E3697FD00C680AA = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = A9H6F32TXZ;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -141,12 +223,35 @@
 			mainGroup = 471F48C01E3697FD00C680AA;
 			productRefGroup = 471F48CA1E3697FD00C680AA /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 4714A87F1E3FDEF700D8CB1D /* Products */;
+					ProjectRef = 4714A87E1E3FDEF700D8CB1D /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				471F48C81E3697FD00C680AA /* iGitHub */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		4714A8841E3FDEF700D8CB1D /* libAFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAFNetworking.a;
+			remoteRef = 4714A8831E3FDEF700D8CB1D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		4714A8861E3FDEF700D8CB1D /* libPods-iGitHub.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-iGitHub.a";
+			remoteRef = 4714A8851E3FDEF700D8CB1D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		471F48C71E3697FD00C680AA /* Resources */ = {
@@ -160,6 +265,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08C8BA63ADD1096598654076 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iGitHub/Pods-iGitHub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		82AD4D9ADDB4A64C16A53847 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		90173733A686E2BBB8B65EA3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iGitHub/Pods-iGitHub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		471F48C51E3697FD00C680AA /* Sources */ = {
@@ -236,7 +389,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -278,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -288,8 +441,10 @@
 		};
 		471F48E41E3697FE00C680AA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 04200B732057E4AD0B935F03 /* Pods-iGitHub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A9H6F32TXZ;
 				INFOPLIST_FILE = iGitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.maikotrindade.iGitHub;
@@ -299,8 +454,10 @@
 		};
 		471F48E51E3697FE00C680AA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B3BADB170D62637BB0EC63A /* Pods-iGitHub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = A9H6F32TXZ;
 				INFOPLIST_FILE = iGitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.maikotrindade.iGitHub;
@@ -318,7 +475,7 @@
 				471F48E21E3697FE00C680AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 		471F48E31E3697FE00C680AA /* Build configuration list for PBXNativeTarget "iGitHub" */ = {
 			isa = XCConfigurationList;
@@ -327,7 +484,7 @@
 				471F48E51E3697FE00C680AA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 

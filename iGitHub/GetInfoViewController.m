@@ -7,6 +7,7 @@
 //
 
 #import "GetInfoViewController.h"
+#import "AFHTTPSessionManager.h"
 
 @interface GetInfoViewController ()
 
@@ -28,24 +29,12 @@
 
 - (void) getInfo {
     
-    AFHTTPClient *httpClient = [[AFHTTPClient alloc] initWithBaseURL:[NSURL URLWithString:@"https://api.github.com"]];
-    NSMutableURLRequest *request = [httpClient requestWithMethod:@"GET"
-                                                            path:@"https://api.github.com/users/maikotrindade"
-                                                      parameters:nil];
-    
-    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
-    
-    [httpClient registerHTTPOperationClass:[AFHTTPRequestOperation class]];
-    
-    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        // Print the response body in text
-        NSLog(@"Response: %@", [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding]);
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:@"https://api.github.com/users/maikotrindade" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSLog(@"JSON: %@", responseObject);
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
         NSLog(@"Error: %@", error);
     }];
-    [operation start];
     
 }
 

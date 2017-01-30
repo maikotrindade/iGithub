@@ -65,15 +65,15 @@
             </objects>
             <point key="canvasLocation" x="24.800000000000001" y="36.431784107946029"/>
         </scene>
-        <!--Login View Controller-->
+        <!--Get Info View Controller-->
         <scene sceneID="p5o-1q-7Y9">
             <objects>
-                <viewController id="0RG-DK-zht" customClass="LoginViewController" sceneMemberID="viewController">
+                <viewController id="0RG-DK-zht" customClass="GetInfoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jSx-xU-mGH"/>
                         <viewControllerLayoutGuide type="bottom" id="3da-wc-YZo"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GyK-ZE-ZKH">
+                    <view key="view" contentMode="scaleToFill" id="GyK-ZE-ZKH" customClass="GetInfoViewCOntroller">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
