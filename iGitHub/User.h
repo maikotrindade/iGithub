@@ -11,5 +11,15 @@
 @interface User : NSObject
 
 @property(strong, nonatomic) NSString *name;
+@property(strong, nonatomic) NSString *avatar_url;
+@property(strong, nonatomic) NSString *html_url;
+@property(strong, nonatomic) NSString *followers_url;
+@property(strong, nonatomic) NSString *repos_url;
+@property(strong, nonatomic) NSString *blog;
+@property(strong, nonatomic) NSString *location;
+@property(strong, nonatomic) NSString *bio;
+@property(strong, nonatomic) NSString *created_at;
+
++(User *) parse:(NSDictionary *) responseObject;
 
 @end

@@ -8,6 +8,7 @@
 
 #import "GetInfoViewController.h"
 #import "AFHTTPSessionManager.h"
+#import "User.h"
 
 @interface GetInfoViewController ()
 
@@ -30,8 +31,9 @@
 - (void) getInfo {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:@"https://api.github.com/users/maikotrindade" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        NSLog(@"JSON: %@", responseObject);
-        NSDictionary *jsonDict = (NSDictionary *) responseObject;
+    
+        User *user = [User parse:responseObject];
+        NSLog(@"Username: %@", user.name);
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         [self showErrorMessage];
