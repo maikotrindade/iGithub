@@ -18,26 +18,34 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-    
     [self getInfo];
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
 - (void) getInfo {
+    [self showProgress];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:@"https://api.github.com/users/maikotrindade" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-    
         User *user = [User parse:responseObject];
-        NSLog(@"Username: %@", user.name);
-        
+        [self stopProgress];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
+        [self stopProgress];
         [self showErrorMessage];
     }];
+}
+
+-(void) showProgress {
+    UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+    spinner.tag = 666;
+    CGPoint centerImageView = spinner.center;
+    centerImageView.x = self.view.center.x;
+    centerImageView.y = self.view.center.y;
+    spinner.center = centerImageView;
+    [self.view addSubview:spinner];
+    [spinner startAnimating];
+}
+
+-(void) stopProgress {
+    [[self.view viewWithTag:666] stopAnimating];
 }
 
 -(void) showErrorMessage {
