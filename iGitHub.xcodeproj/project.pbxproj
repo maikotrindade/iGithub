@@ -17,6 +17,7 @@
 		471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */; };
 		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
 		47AE002E1E3FE8F10037824C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AE002D1E3FE8F10037824C /* User.m */; };
+		47AE00371E40B5E10037824C /* ReposTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AE00361E40B5E10037824C /* ReposTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,8 @@
 		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
 		47AE002D1E3FE8F10037824C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		47AE002F1E3FE9110037824C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		47AE00351E40B5E10037824C /* ReposTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReposTableViewController.h; sourceTree = "<group>"; };
+		47AE00361E40B5E10037824C /* ReposTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReposTableViewController.m; sourceTree = "<group>"; };
 		CDD0ABBF2A474521A21FE28D /* libPods-iGitHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iGitHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -143,6 +146,8 @@
 				471F48D31E3697FD00C680AA /* HomeViewController.m */,
 				4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */,
 				4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */,
+				47AE00351E40B5E10037824C /* ReposTableViewController.h */,
+				47AE00361E40B5E10037824C /* ReposTableViewController.m */,
 			);
 			name = login;
 			sourceTree = "<group>";
@@ -341,6 +346,7 @@
 			files = (
 				471F48DA1E3697FE00C680AA /* iGitHub.xcdatamodeld in Sources */,
 				471F48D41E3697FD00C680AA /* HomeViewController.m in Sources */,
+				47AE00371E40B5E10037824C /* ReposTableViewController.m in Sources */,
 				47AE002E1E3FE8F10037824C /* User.m in Sources */,
 				471F48D11E3697FD00C680AA /* AppDelegate.m in Sources */,
 				471F48CE1E3697FD00C680AA /* main.m in Sources */,
