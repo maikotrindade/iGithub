@@ -16,8 +16,12 @@
 		471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DB1E3697FE00C680AA /* Assets.xcassets */; };
 		471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */; };
 		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
+		479223821E421F1500674AFB /* ReposTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 479223801E421F1500674AFB /* ReposTableViewCell.m */; };
+		479223831E421F1500674AFB /* ReposTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479223811E421F1500674AFB /* ReposTableViewCell.xib */; };
+		479223881E421F7600674AFB /* RepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479223861E421F7600674AFB /* RepoTableViewController.m */; };
+		479223891E421F7600674AFB /* RepoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479223871E421F7600674AFB /* RepoTableViewController.xib */; };
+		4792238C1E4220A000674AFB /* Repo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4792238B1E4220A000674AFB /* Repo.m */; };
 		47AE002E1E3FE8F10037824C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AE002D1E3FE8F10037824C /* User.m */; };
-		47AE00371E40B5E10037824C /* ReposTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AE00361E40B5E10037824C /* ReposTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +71,16 @@
 		471F48E01E3697FE00C680AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInfoViewController.h; sourceTree = "<group>"; };
 		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
+		4792237F1E421F1500674AFB /* ReposTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReposTableViewCell.h; sourceTree = "<group>"; };
+		479223801E421F1500674AFB /* ReposTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReposTableViewCell.m; sourceTree = "<group>"; };
+		479223811E421F1500674AFB /* ReposTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReposTableViewCell.xib; sourceTree = "<group>"; };
+		479223851E421F7600674AFB /* RepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoTableViewController.h; sourceTree = "<group>"; };
+		479223861E421F7600674AFB /* RepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoTableViewController.m; sourceTree = "<group>"; };
+		479223871E421F7600674AFB /* RepoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewController.xib; sourceTree = "<group>"; };
+		4792238A1E4220A000674AFB /* Repo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repo.h; sourceTree = "<group>"; };
+		4792238B1E4220A000674AFB /* Repo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repo.m; sourceTree = "<group>"; };
 		47AE002D1E3FE8F10037824C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 		47AE002F1E3FE9110037824C /* User.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
-		47AE00351E40B5E10037824C /* ReposTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReposTableViewController.h; sourceTree = "<group>"; };
-		47AE00361E40B5E10037824C /* ReposTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReposTableViewController.m; sourceTree = "<group>"; };
 		CDD0ABBF2A474521A21FE28D /* libPods-iGitHub.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-iGitHub.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -124,7 +134,7 @@
 				471F48E01E3697FE00C680AA /* Info.plist */,
 				471F48D81E3697FE00C680AA /* iGitHub.xcdatamodeld */,
 				47AE002C1E3FE8BE0037824C /* models */,
-				4767192C1E3BE2CF006B9344 /* login */,
+				4767192C1E3BE2CF006B9344 /* new group */,
 				47AE00281E3FE5420037824C /* utility */,
 				471F48CC1E3697FD00C680AA /* Supporting Files */,
 			);
@@ -139,17 +149,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4767192C1E3BE2CF006B9344 /* login */ = {
+		4767192C1E3BE2CF006B9344 /* new group */ = {
 			isa = PBXGroup;
 			children = (
 				471F48D21E3697FD00C680AA /* HomeViewController.h */,
 				471F48D31E3697FD00C680AA /* HomeViewController.m */,
 				4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */,
 				4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */,
-				47AE00351E40B5E10037824C /* ReposTableViewController.h */,
-				47AE00361E40B5E10037824C /* ReposTableViewController.m */,
+				4792237F1E421F1500674AFB /* ReposTableViewCell.h */,
+				479223801E421F1500674AFB /* ReposTableViewCell.m */,
+				479223811E421F1500674AFB /* ReposTableViewCell.xib */,
+				479223851E421F7600674AFB /* RepoTableViewController.h */,
+				479223861E421F7600674AFB /* RepoTableViewController.m */,
+				479223871E421F7600674AFB /* RepoTableViewController.xib */,
 			);
-			name = login;
+			name = "new group";
 			sourceTree = "<group>";
 		};
 		47AE00281E3FE5420037824C /* utility */ = {
@@ -164,6 +178,8 @@
 			children = (
 				47AE002D1E3FE8F10037824C /* User.m */,
 				47AE002F1E3FE9110037824C /* User.h */,
+				4792238A1E4220A000674AFB /* Repo.h */,
+				4792238B1E4220A000674AFB /* Repo.m */,
 			);
 			name = models;
 			sourceTree = "<group>";
@@ -286,6 +302,8 @@
 				471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */,
 				471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */,
 				471F48D71E3697FD00C680AA /* Main.storyboard in Resources */,
+				479223891E421F7600674AFB /* RepoTableViewController.xib in Resources */,
+				479223831E421F1500674AFB /* ReposTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -345,8 +363,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				471F48DA1E3697FE00C680AA /* iGitHub.xcdatamodeld in Sources */,
+				479223881E421F7600674AFB /* RepoTableViewController.m in Sources */,
+				479223821E421F1500674AFB /* ReposTableViewCell.m in Sources */,
+				4792238C1E4220A000674AFB /* Repo.m in Sources */,
 				471F48D41E3697FD00C680AA /* HomeViewController.m in Sources */,
-				47AE00371E40B5E10037824C /* ReposTableViewController.m in Sources */,
 				47AE002E1E3FE8F10037824C /* User.m in Sources */,
 				471F48D11E3697FD00C680AA /* AppDelegate.m in Sources */,
 				471F48CE1E3697FD00C680AA /* main.m in Sources */,
