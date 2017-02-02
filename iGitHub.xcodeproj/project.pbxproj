@@ -176,8 +176,8 @@
 		47AE002C1E3FE8BE0037824C /* models */ = {
 			isa = PBXGroup;
 			children = (
-				47AE002D1E3FE8F10037824C /* User.m */,
 				47AE002F1E3FE9110037824C /* User.h */,
+				47AE002D1E3FE8F10037824C /* User.m */,
 				4792238A1E4220A000674AFB /* Repo.h */,
 				4792238B1E4220A000674AFB /* Repo.m */,
 			);
