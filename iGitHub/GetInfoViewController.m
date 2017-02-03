@@ -9,12 +9,15 @@
 #import "GetInfoViewController.h"
 #import "AFHTTPSessionManager.h"
 #import "User.h"
+#import "Repo.h"
 
 @interface GetInfoViewController ()
 
 @end
 
 @implementation GetInfoViewController 
+
+@synthesize user;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -25,7 +28,7 @@
     [self showProgress];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:@"https://api.github.com/users/maikotrindade" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        User *user = [User parse:responseObject];
+        self.user = [User parse:responseObject];
         [self stopProgress];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         [self stopProgress];
@@ -75,7 +78,24 @@
 # pragma ACTIONS
 
 - (IBAction)repoListButtonTapped:(id)sender {
-    NSLog(@"repoListButtonTapped");
+    [self showProgress];
+    
+    NSString *reposUrl = self.user.repos_url;
+    
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    [manager GET:reposUrl parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
+        NSArray *responseArray = responseObject;
+        NSMutableArray *repos = [[NSMutableArray alloc] initWithArray:[Repo parse:responseArray] copyItems:YES];
+        //[NSMutableArray arrayWithArray:array];
+        for (Repo *repo in repos) {
+            NSLog(@"Repo name: %@", repo.url);
+        }
+        
+        [self stopProgress];
+    } failure:^(NSURLSessionTask *operation, NSError *error) {
+        [self stopProgress];
+        [self showErrorMessage];
+    }];
     
 }
 

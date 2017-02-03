@@ -23,6 +23,8 @@
 @property(strong, nonatomic) NSString *git_url;
 @property(strong, nonatomic) NSString *full_name;
 
-+(Repo *) parse:(NSDictionary *) responseObject;
++(NSMutableArray *) parse:(NSArray *) responseArray ;
+
+
 
 @end
