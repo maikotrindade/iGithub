@@ -10,6 +10,19 @@
 
 @implementation Repo
 
+@synthesize has_wiki;
+@synthesize homepage;
+@synthesize url;
+@synthesize size;
+@synthesize language;
+@synthesize forks_count;
+@synthesize watchers_count;
+@synthesize name;
+@synthesize created_at;
+@synthesize forks;
+@synthesize git_url;
+@synthesize full_name;
+
 +(NSMutableArray *) parse:(NSArray *) responseArray {
     
     NSMutableArray *repoArray = [[NSMutableArray init] alloc];
@@ -32,6 +45,10 @@
     }
     
     return repoArray;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat:@"Repo: has_wiki=%@ homepage=%@ url=%@ size=%@ language=%@ forks_count=%@ watchers_count=%@ name=%@ created_at=%@ forks=%@ git_url=%@ full_name=%@ ", has_wiki, homepage, url, size, language, forks_count, watchers_count, name, created_at, forks, git_url, full_name];
 }
 
 @end

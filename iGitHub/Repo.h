@@ -25,6 +25,4 @@
 
 +(NSMutableArray *) parse:(NSArray *) responseArray ;
 
-
-
 @end
