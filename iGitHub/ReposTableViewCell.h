@@ -10,4 +10,6 @@
 
 @interface ReposTableViewCell : UITableViewCell
 
+@property (strong, nonatomic) IBOutlet UILabel *lblRepoName;
+
 @end

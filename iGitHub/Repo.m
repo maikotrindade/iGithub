@@ -25,7 +25,7 @@
 
 +(NSMutableArray *) parse:(NSArray *) responseArray {
     
-    NSMutableArray *repoArray = [[NSMutableArray init] alloc];
+    NSMutableArray *repoArray = [[NSMutableArray alloc] init];
     for (NSDictionary *responseObject in responseArray) {
         Repo *repo = [[Repo alloc] init];
         [repo setHas_wiki: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"has_wiki"]]];
@@ -41,7 +41,7 @@
         [repo setGit_url: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"git_url"]]];
         [repo setFull_name: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"full_name"]]];
         
-        [repoArray addObject:[repo class]];
+        [repoArray addObject: repo];
     }
     
     return repoArray;

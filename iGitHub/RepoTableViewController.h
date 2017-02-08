@@ -10,4 +10,6 @@
 
 @interface RepoTableViewController : UITableViewController
 
+@property (strong, nonatomic) NSMutableArray *tableData;
+
 @end

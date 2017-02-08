@@ -10,6 +10,7 @@
 #import "AFHTTPSessionManager.h"
 #import "User.h"
 #import "Repo.h"
+#import "RepoTableViewController.h"
 
 @interface GetInfoViewController ()
 
@@ -85,13 +86,12 @@
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     [manager GET:reposUrl parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSArray *responseArray = responseObject;
-        NSMutableArray *repos = [[NSMutableArray alloc] initWithArray:[Repo parse:responseArray] copyItems:YES];
-        //[NSMutableArray arrayWithArray:array];
-        for (Repo *repo in repos) {
-            NSLog(@"Repo name: %@", repo.url);
-        }
+
+        RepoTableViewController *controller = [[RepoTableViewController alloc] initWithNibName:@"RepoTableViewController" bundle:nil];
+        [controller setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
+        controller.tableData = [[NSMutableArray alloc] initWithArray:[Repo parse:responseArray]];
+        [self presentViewController:controller animated:YES completion:nil];
         
-        [self stopProgress];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         [self stopProgress];
         [self showErrorMessage];
