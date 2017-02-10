@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "User.h"
 @interface HomeViewController : UIViewController
 
+@property (strong, nonatomic) IBOutlet UITextField *txtFldUsername;
+@property (nonatomic, strong) User *user;
 
 @end
 

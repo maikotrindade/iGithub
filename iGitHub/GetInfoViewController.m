@@ -18,23 +18,40 @@
 
 @implementation GetInfoViewController 
 
-@synthesize user;
+@synthesize user, lblName, lblBiography, lblLocation, lblBlog, lblCreatedAt, lblGitHub, lblFollowers;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getInfo];
+    [self configureElements];
 }
 
-- (void) getInfo {
-    [self showProgress];
-    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    [manager GET:@"https://api.github.com/users/maikotrindade" parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
-        self.user = [User parse:responseObject];
-        [self stopProgress];
-    } failure:^(NSURLSessionTask *operation, NSError *error) {
-        [self stopProgress];
+-(void) configureElements {
+    if (user) {
+        [lblName setText:user.name];
+        [lblFollowers setText:user.followers];
+        [lblCreatedAt setText:[user.created_at substringWithRange:NSMakeRange(0, 10)]];
+        [lblGitHub setText:user.html_url];
+        
+        if (user.bio || [user.bio length] == 0) {
+            [lblBlog setText:user.blog];
+        } else {
+            [lblBlog setText:@"Not available"];
+        }
+        
+        if (user.bio || [user.bio length] == 0) {
+            [lblBiography setText:user.bio];
+        } else {
+            lblBiography.frame = CGRectZero;
+        }
+        if (user.location || [user.location length] == 0) {
+            [lblLocation setText:user.location];
+        } else {
+            lblLocation.frame = CGRectZero;
+        }
+    } else {
         [self showErrorMessage];
-    }];
+    }
+    
 }
 
 -(void) showProgress {
@@ -54,25 +71,18 @@
 
 -(void) showErrorMessage {
     UIAlertController * alert = [UIAlertController
-                                 alertControllerWithTitle:@"Title"
-                                 message:@"Message"
+                                 alertControllerWithTitle:@"Error"
+                                 message:@"Something unexpected happened"
                                  preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* yesButton = [UIAlertAction
-                                actionWithTitle:@"Yes, please"
+    UIAlertAction* okButton = [UIAlertAction
+                                actionWithTitle:@"Okay"
                                 style:UIAlertActionStyleDefault
                                 handler:^(UIAlertAction * action) {
                                 }];
-    
-    UIAlertAction* noButton = [UIAlertAction
-                               actionWithTitle:@"No, thanks"
-                               style:UIAlertActionStyleDefault
-                               handler:^(UIAlertAction * action) {
-                               }];
-    
-    [alert addAction:yesButton];
-    [alert addAction:noButton];
-    
+  
+    [alert addAction:okButton];
+
     [self presentViewController:alert animated:YES completion:nil];
 }
 

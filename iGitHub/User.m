@@ -8,20 +8,25 @@
 
 #import <Foundation/Foundation.h>
 #import "User.h"
+#import "AppUtility.h"
 
 @implementation User
 
 +(User *) parse:(NSDictionary *) responseObject {
     User *user = [[User alloc] init];
-    [user setName: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"name"]]];
-    [user setAvatar_url: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"avatar_url"]]];
-    [user setHtml_url: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"html_url"]]];
-    [user setFollowers_url: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"followers_url"]]];
-    [user setRepos_url: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"repos_url"]]];
-    [user setBlog: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"blog"]]];
-    [user setLocation: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"location"]]];
-    [user setBio: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"bio"]]];
-    [user setCreated_at: [NSString stringWithFormat:@"%@", [responseObject objectForKey:@"created_at"]]];
+    
+    NSDictionary *dictionaryResponse = [AppUtility dictionaryByReplacingNullsWithBlanks:responseObject];
+    
+    [user setName: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"name"]]];
+    [user setAvatar_url: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"avatar_url"]]];
+    [user setHtml_url: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"html_url"]]];
+    [user setFollowers: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"followers"]]];
+    [user setRepos_url: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"repos_url"]]];
+    [user setBlog: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"blog"]]];
+    [user setLocation: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"location"]]];
+    [user setBio: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"bio"]]];
+    [user setCreated_at: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"created_at"]]];
+    
     return user;
 }
 
