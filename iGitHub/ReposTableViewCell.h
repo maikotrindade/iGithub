@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface ReposTableViewCell : UITableViewCell
+@property (weak, nonatomic) IBOutlet UILabel *lblCreatedAt;
+@property (weak, nonatomic) IBOutlet UILabel *lblUrl;
+@property (weak, nonatomic) IBOutlet UILabel *lblFullname;
+@property (strong, nonatomic) IBOutlet UILabel *lblSize;
 
-@property (strong, nonatomic) IBOutlet UILabel *lblRepoName;
+@property (weak, nonatomic) IBOutlet UILabel *lblName;
 
 @end
