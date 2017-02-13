@@ -200,10 +200,10 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="followers" destination="trs-Cy-nG3" id="3bL-jq-UXN"/>
                         <outlet property="lblBiography" destination="0YN-hq-ZQg" id="iiN-KH-ADb"/>
                         <outlet property="lblBlog" destination="rkX-RQ-sM0" id="8wF-BD-1vC"/>
                         <outlet property="lblCreatedAt" destination="IaM-mg-LaF" id="UJs-pA-1gg"/>
+                        <outlet property="lblFollowers" destination="trs-Cy-nG3" id="JSC-HD-o1D"/>
                         <outlet property="lblGitHub" destination="Vym-gl-dK4" id="fnQ-Lk-23k"/>
                         <outlet property="lblLocation" destination="9Lp-ah-0qu" id="fGF-6o-pQ4"/>
                         <outlet property="lblName" destination="S06-GX-cv8" id="XpO-ro-sB7"/>
