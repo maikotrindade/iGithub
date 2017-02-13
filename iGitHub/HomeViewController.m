@@ -10,6 +10,8 @@
 #import "GetInfoViewController.h"
 #import "ConstantsUtil.h"
 #import "AFHTTPSessionManager.h"
+#import <CoreData/CoreData.h>
+#import "AppDelegate.h"
 
 @interface HomeViewController ()
 
@@ -38,6 +40,7 @@
     
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         self.user = [User parse:responseObject];
+        [self saveUser];
         [self performSegueWithIdentifier:@"HomeScreenToGetInfoScreen" sender:self];
         [self stopProgress];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
@@ -57,6 +60,32 @@
     [spinner startAnimating];
 }
 
+- (void)saveUser {
+    NSManagedObjectContext *context = [AppDelegate getManagedContext];
+    
+    // Create a new managed object
+    NSManagedObject *userManagedObj = [NSEntityDescription insertNewObjectForEntityForName:@"User_Table" inManagedObjectContext:context];
+    [userManagedObj setValue:user.name forKey:@"name"];
+    [userManagedObj setValue:user.followers forKey:@"followers"];
+    [userManagedObj setValue:user.avatar_url forKey:@"avatar_url"];
+    [userManagedObj setValue:user.html_url forKey:@"html_url"];
+    [userManagedObj setValue:user.bio forKey:@"bio"];
+    [userManagedObj setValue:user.repos_url forKey:@"repos_url"];
+    [userManagedObj setValue:user.blog forKey:@"blog"];
+    [userManagedObj setValue:user.location forKey:@"location"];
+    [userManagedObj setValue:user.created_at forKey:@"created_at"];
+    
+    NSError *error = nil;
+    // Save the object to persistent store
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+        [self showErrorMessage];
+    } else {
+        NSLog(@"User %@ saved successfully", user.name);
+    }
+    
+}
+
 -(void) stopProgress {
     [[self.view viewWithTag:666] stopAnimating];
 }
@@ -66,7 +95,7 @@
                                  alertControllerWithTitle:@"Error"
                                  message:@"Something unexpected happened"
                                  preferredStyle:UIAlertControllerStyleAlert];
-
+    
     UIAlertAction* okButton = [UIAlertAction
                                actionWithTitle:@"Okay"
                                style:UIAlertActionStyleDefault
@@ -81,5 +110,7 @@
 - (IBAction)getInfoButtonTapped:(id)sender {
     [self getInfo];
 }
+
+
 
 @end

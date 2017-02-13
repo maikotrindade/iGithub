@@ -17,6 +17,9 @@
 
 - (void)saveContext;
 
++ (AppDelegate *)sharedAppDelegate;
+
++ (NSManagedObjectContext *)getManagedContext;
 
 @end
 

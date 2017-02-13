@@ -10,10 +10,21 @@
 
 @interface AppDelegate ()
 
+
+
 @end
 
 @implementation AppDelegate
 
++ (AppDelegate *)sharedAppDelegate
+{
+    return (AppDelegate *)[[UIApplication sharedApplication] delegate];
+}
+
++ (NSManagedObjectContext *)getManagedContext
+{
+    return [[[self sharedAppDelegate] persistentContainer ] viewContext];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.

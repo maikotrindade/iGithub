@@ -16,6 +16,7 @@
 		471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DB1E3697FE00C680AA /* Assets.xcassets */; };
 		471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */; };
 		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
+		478052D51E52367300417D06 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 478052D41E52367300417D06 /* CoreData.framework */; };
 		478370F91E4E52150005F587 /* AppUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 478370F81E4E52150005F587 /* AppUtility.m */; };
 		479223821E421F1500674AFB /* ReposTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 479223801E421F1500674AFB /* ReposTableViewCell.m */; };
 		479223831E421F1500674AFB /* ReposTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479223811E421F1500674AFB /* ReposTableViewCell.xib */; };
@@ -72,6 +73,7 @@
 		471F48E01E3697FE00C680AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInfoViewController.h; sourceTree = "<group>"; };
 		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
+		478052D41E52367300417D06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		478370F21E4E3A330005F587 /* ConstantsUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsUtil.h; sourceTree = "<group>"; };
 		478370F81E4E52150005F587 /* AppUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtility.m; sourceTree = "<group>"; };
 		478370FA1E4E52B10005F587 /* AppUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppUtility.h; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				478052D51E52367300417D06 /* CoreData.framework in Frameworks */,
 				4714A88C1E3FDF7E00D8CB1D /* libPods-iGitHub.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,6 +214,7 @@
 		F333BA0A6056E2EA4A5D3017 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				478052D41E52367300417D06 /* CoreData.framework */,
 				4714A87E1E3FDEF700D8CB1D /* Pods.xcodeproj */,
 				4714A8641E3FDED600D8CB1D /* AFHTTPSessionManager.h */,
 				4714A8651E3FDED600D8CB1D /* AFHTTPSessionManager.m */,
