@@ -17,6 +17,9 @@
 		471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */; };
 		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
 		478052D51E52367300417D06 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 478052D41E52367300417D06 /* CoreData.framework */; };
+		4780561C1E5624E800A0BA4B /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4780561B1E5624E800A0BA4B /* UserTableViewController.m */; };
+		478056241E56466800A0BA4B /* UsersTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 478056221E56466800A0BA4B /* UsersTableViewCell.m */; };
+		478056251E56466800A0BA4B /* UsersTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 478056231E56466800A0BA4B /* UsersTableViewCell.xib */; };
 		478370F91E4E52150005F587 /* AppUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 478370F81E4E52150005F587 /* AppUtility.m */; };
 		479223821E421F1500674AFB /* ReposTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 479223801E421F1500674AFB /* ReposTableViewCell.m */; };
 		479223831E421F1500674AFB /* ReposTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479223811E421F1500674AFB /* ReposTableViewCell.xib */; };
@@ -74,6 +77,11 @@
 		4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInfoViewController.h; sourceTree = "<group>"; };
 		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
 		478052D41E52367300417D06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		4780561A1E5624E800A0BA4B /* UserTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTableViewController.h; sourceTree = "<group>"; };
+		4780561B1E5624E800A0BA4B /* UserTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTableViewController.m; sourceTree = "<group>"; };
+		478056211E56466800A0BA4B /* UsersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewCell.h; sourceTree = "<group>"; };
+		478056221E56466800A0BA4B /* UsersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewCell.m; sourceTree = "<group>"; };
+		478056231E56466800A0BA4B /* UsersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
 		478370F21E4E3A330005F587 /* ConstantsUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsUtil.h; sourceTree = "<group>"; };
 		478370F81E4E52150005F587 /* AppUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtility.m; sourceTree = "<group>"; };
 		478370FA1E4E52B10005F587 /* AppUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppUtility.h; sourceTree = "<group>"; };
@@ -133,18 +141,12 @@
 		471F48CB1E3697FD00C680AA /* iGitHub */ = {
 			isa = PBXGroup;
 			children = (
-				478370FB1E4E53CB0005F587 /* Category */,
-				471F48CF1E3697FD00C680AA /* AppDelegate.h */,
-				471F48D01E3697FD00C680AA /* AppDelegate.m */,
-				471F48D51E3697FD00C680AA /* Main.storyboard */,
-				471F48DB1E3697FE00C680AA /* Assets.xcassets */,
-				471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */,
-				471F48E01E3697FE00C680AA /* Info.plist */,
-				471F48D81E3697FE00C680AA /* iGitHub.xcdatamodeld */,
+				4767192C1E3BE2CF006B9344 /* controllers */,
+				478056191E56226C00A0BA4B /* database */,
 				47AE002C1E3FE8BE0037824C /* models */,
-				4767192C1E3BE2CF006B9344 /* new group */,
 				47AE00281E3FE5420037824C /* utility */,
-				471F48CC1E3697FD00C680AA /* Supporting Files */,
+				478056181E56225100A0BA4B /* project_files */,
+				471F48DB1E3697FE00C680AA /* Assets.xcassets */,
 			);
 			path = iGitHub;
 			sourceTree = "<group>";
@@ -157,13 +159,46 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		4767192C1E3BE2CF006B9344 /* new group */ = {
+		4767192C1E3BE2CF006B9344 /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				471F48CF1E3697FD00C680AA /* AppDelegate.h */,
+				471F48D01E3697FD00C680AA /* AppDelegate.m */,
+				471F48D51E3697FD00C680AA /* Main.storyboard */,
+				471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */,
+				478056171E56222000A0BA4B /* repositories_screen */,
+				478056161E5621FE00A0BA4B /* get_info_screen */,
+				478056151E5621FA00A0BA4B /* home_screen */,
+			);
+			name = controllers;
+			sourceTree = "<group>";
+		};
+		478056151E5621FA00A0BA4B /* home_screen */ = {
 			isa = PBXGroup;
 			children = (
 				471F48D21E3697FD00C680AA /* HomeViewController.h */,
 				471F48D31E3697FD00C680AA /* HomeViewController.m */,
+				4780561A1E5624E800A0BA4B /* UserTableViewController.h */,
+				4780561B1E5624E800A0BA4B /* UserTableViewController.m */,
+				478056211E56466800A0BA4B /* UsersTableViewCell.h */,
+				478056221E56466800A0BA4B /* UsersTableViewCell.m */,
+				478056231E56466800A0BA4B /* UsersTableViewCell.xib */,
+			);
+			name = home_screen;
+			sourceTree = "<group>";
+		};
+		478056161E5621FE00A0BA4B /* get_info_screen */ = {
+			isa = PBXGroup;
+			children = (
 				4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */,
 				4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */,
+			);
+			name = get_info_screen;
+			sourceTree = "<group>";
+		};
+		478056171E56222000A0BA4B /* repositories_screen */ = {
+			isa = PBXGroup;
+			children = (
 				4792237F1E421F1500674AFB /* ReposTableViewCell.h */,
 				479223801E421F1500674AFB /* ReposTableViewCell.m */,
 				479223811E421F1500674AFB /* ReposTableViewCell.xib */,
@@ -171,14 +206,24 @@
 				479223861E421F7600674AFB /* RepoTableViewController.m */,
 				479223871E421F7600674AFB /* RepoTableViewController.xib */,
 			);
-			name = "new group";
+			name = repositories_screen;
 			sourceTree = "<group>";
 		};
-		478370FB1E4E53CB0005F587 /* Category */ = {
+		478056181E56225100A0BA4B /* project_files */ = {
 			isa = PBXGroup;
 			children = (
+				471F48CC1E3697FD00C680AA /* Supporting Files */,
+				471F48E01E3697FE00C680AA /* Info.plist */,
 			);
-			name = Category;
+			name = project_files;
+			sourceTree = "<group>";
+		};
+		478056191E56226C00A0BA4B /* database */ = {
+			isa = PBXGroup;
+			children = (
+				471F48D81E3697FE00C680AA /* iGitHub.xcdatamodeld */,
+			);
+			name = database;
 			sourceTree = "<group>";
 		};
 		47AE00281E3FE5420037824C /* utility */ = {
@@ -320,6 +365,7 @@
 			files = (
 				471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */,
 				471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */,
+				478056251E56466800A0BA4B /* UsersTableViewCell.xib in Resources */,
 				471F48D71E3697FD00C680AA /* Main.storyboard in Resources */,
 				479223891E421F7600674AFB /* RepoTableViewController.xib in Resources */,
 				479223831E421F1500674AFB /* ReposTableViewCell.xib in Resources */,
@@ -389,8 +435,10 @@
 				471F48D41E3697FD00C680AA /* HomeViewController.m in Sources */,
 				47AE002E1E3FE8F10037824C /* User.m in Sources */,
 				471F48D11E3697FD00C680AA /* AppDelegate.m in Sources */,
+				478056241E56466800A0BA4B /* UsersTableViewCell.m in Sources */,
 				471F48CE1E3697FD00C680AA /* main.m in Sources */,
 				4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */,
+				4780561C1E5624E800A0BA4B /* UserTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -512,6 +560,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = iGitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.maikotrindade.iGitHub;
@@ -525,6 +574,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = "";
+				GCC_NO_COMMON_BLOCKS = NO;
 				INFOPLIST_FILE = iGitHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = br.com.maikotrindade.iGitHub;

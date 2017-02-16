@@ -13,7 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *lblUrl;
 @property (weak, nonatomic) IBOutlet UILabel *lblFullname;
 @property (strong, nonatomic) IBOutlet UILabel *lblSize;
-
 @property (weak, nonatomic) IBOutlet UILabel *lblName;
-
 @end

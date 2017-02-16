@@ -12,6 +12,10 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *txtFldUsername;
 @property (nonatomic, strong) User *user;
+@property (strong) NSMutableArray *users;
+
+@property (strong, nonatomic) IBOutlet UITableView *usersTableView;
+
 
 @end
 

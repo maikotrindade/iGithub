@@ -12,6 +12,7 @@
 #import "AFHTTPSessionManager.h"
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
+#import "UserTableViewController.h"
 
 @interface HomeViewController ()
 
@@ -19,10 +20,23 @@
 
 @implementation HomeViewController
 
-@synthesize txtFldUsername, user;
+NSManagedObjectContext *managedObjectContext;
+
+@synthesize txtFldUsername, user, users, usersTableView;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    managedObjectContext = [AppDelegate getManagedContext];
+    [self getUsers];
+    [self bindUsersTableView];
+}
+
+-(void) bindUsersTableView {
+    UserTableViewController *tableViewController = [[UserTableViewController alloc] init];
+    tableViewController.usersTableData = users;
+    usersTableView.dataSource = tableViewController;
+    usersTableView.delegate = tableViewController;
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
@@ -61,10 +75,8 @@
 }
 
 - (void)saveUser {
-    NSManagedObjectContext *context = [AppDelegate getManagedContext];
     
-    // Create a new managed object
-    NSManagedObject *userManagedObj = [NSEntityDescription insertNewObjectForEntityForName:@"User_Table" inManagedObjectContext:context];
+    NSManagedObject *userManagedObj = [NSEntityDescription insertNewObjectForEntityForName:@"User_Table" inManagedObjectContext:managedObjectContext];
     [userManagedObj setValue:user.name forKey:@"name"];
     [userManagedObj setValue:user.followers forKey:@"followers"];
     [userManagedObj setValue:user.avatar_url forKey:@"avatar_url"];
@@ -76,14 +88,21 @@
     [userManagedObj setValue:user.created_at forKey:@"created_at"];
     
     NSError *error = nil;
-    // Save the object to persistent store
-    if (![context save:&error]) {
+    if (![managedObjectContext save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
         [self showErrorMessage];
     } else {
         NSLog(@"User %@ saved successfully", user.name);
     }
     
+}
+
+- (void) getUsers {
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User_Table"];
+    //[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"name == %@", @"Maiko Trindade"]];
+    self.users = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+    //[self.tableView reloadData];
 }
 
 -(void) stopProgress {
@@ -110,7 +129,6 @@
 - (IBAction)getInfoButtonTapped:(id)sender {
     [self getInfo];
 }
-
 
 
 @end

@@ -47,6 +47,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Y2z-qG-m0r">
+                                <rect key="frame" x="16" y="191" width="343" height="404"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -55,13 +59,18 @@
                             <constraint firstAttribute="trailing" secondItem="pbh-Z8-udI" secondAttribute="trailing" id="DX7-gM-F3e"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="pbh-Z8-udI" secondAttribute="bottom" id="LhA-xA-KC7"/>
                             <constraint firstItem="pbh-Z8-udI" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="ahy-n0-va3"/>
+                            <constraint firstAttribute="trailing" secondItem="Y2z-qG-m0r" secondAttribute="trailing" constant="16" id="lVp-UC-whS"/>
+                            <constraint firstItem="Y2z-qG-m0r" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="16" id="pnM-Uc-0vP"/>
+                            <constraint firstItem="Y2z-qG-m0r" firstAttribute="top" secondItem="j4L-NG-6Th" secondAttribute="bottom" constant="24" id="qHv-uY-lAQ"/>
                             <constraint firstItem="j4L-NG-6Th" firstAttribute="top" secondItem="zjo-7J-xsZ" secondAttribute="bottom" constant="16" id="qxY-d8-DZ2"/>
                             <constraint firstItem="zjo-7J-xsZ" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="80" id="vzk-jI-gEv"/>
+                            <constraint firstItem="pbh-Z8-udI" firstAttribute="top" secondItem="Y2z-qG-m0r" secondAttribute="bottom" constant="16" id="wLb-ig-el0"/>
                             <constraint firstAttribute="trailing" secondItem="j4L-NG-6Th" secondAttribute="trailing" constant="48" id="zjc-VB-d7R"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="txtFldUsername" destination="j4L-NG-6Th" id="NtO-ki-qC2"/>
+                        <outlet property="usersTableView" destination="Y2z-qG-m0r" id="lgR-ys-rhs"/>
                         <segue destination="0RG-DK-zht" kind="showDetail" identifier="HomeScreenToGetInfoScreen" id="nis-HY-qqb"/>
                     </connections>
                 </viewController>
