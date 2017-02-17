@@ -32,7 +32,7 @@
         [lblCreatedAt setText:[user.created_at substringWithRange:NSMakeRange(0, 10)]];
         [lblGitHub setText:user.html_url];
         
-        if (user.bio || [user.bio length] == 0) {
+        if (user.blog || [user.blog length] == 0) {
             [lblBlog setText:user.blog];
         } else {
             [lblBlog setText:@"Not available"];

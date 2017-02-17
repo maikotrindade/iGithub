@@ -17,6 +17,7 @@
     
     NSDictionary *dictionaryResponse = [AppUtility dictionaryByReplacingNullsWithBlanks:responseObject];
     
+    [user set_id: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"id"]]];
     [user setName: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"name"]]];
     [user setAvatar_url: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"avatar_url"]]];
     [user setHtml_url: [NSString stringWithFormat:@"%@", [dictionaryResponse objectForKey:@"html_url"]]];

@@ -104,16 +104,36 @@ NSManagedObjectContext *managedObjectContext;
 
 - (void)saveUser {
     
-    NSManagedObject *userManagedObj = [NSEntityDescription insertNewObjectForEntityForName:@"User_Table" inManagedObjectContext:managedObjectContext];
-    [userManagedObj setValue:user.name forKey:@"name"];
-    [userManagedObj setValue:user.followers forKey:@"followers"];
-    [userManagedObj setValue:user.avatar_url forKey:@"avatar_url"];
-    [userManagedObj setValue:user.html_url forKey:@"html_url"];
-    [userManagedObj setValue:user.bio forKey:@"bio"];
-    [userManagedObj setValue:user.repos_url forKey:@"repos_url"];
-    [userManagedObj setValue:user.blog forKey:@"blog"];
-    [userManagedObj setValue:user.location forKey:@"location"];
-    [userManagedObj setValue:user.created_at forKey:@"created_at"];
+    //check whether this user is already registered or not
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User_Table"];
+    [fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"id == %@", user._id]];
+    NSArray *usersAlreadyDB = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
+
+    if (usersAlreadyDB.count == 0) {
+        NSManagedObject *userManagedObj = [NSEntityDescription insertNewObjectForEntityForName:@"User_Table" inManagedObjectContext:managedObjectContext];
+        [userManagedObj setValue:user._id forKey:@"id"];
+        [userManagedObj setValue:user.name forKey:@"name"];
+        [userManagedObj setValue:user.followers forKey:@"followers"];
+        [userManagedObj setValue:user.avatar_url forKey:@"avatar_url"];
+        [userManagedObj setValue:user.html_url forKey:@"html_url"];
+        [userManagedObj setValue:user.bio forKey:@"bio"];
+        [userManagedObj setValue:user.repos_url forKey:@"repos_url"];
+        [userManagedObj setValue:user.blog forKey:@"blog"];
+        [userManagedObj setValue:user.location forKey:@"location"];
+        [userManagedObj setValue:user.created_at forKey:@"created_at"];
+    } else {
+        User *userUpdate = usersAlreadyDB[0];
+        [userUpdate setValue:user._id forKey:@"id"];
+        [userUpdate setValue:user.name forKey:@"name"];
+        [userUpdate setValue:user.followers forKey:@"followers"];
+        [userUpdate setValue:user.avatar_url forKey:@"avatar_url"];
+        [userUpdate setValue:user.html_url forKey:@"html_url"];
+        [userUpdate setValue:user.bio forKey:@"bio"];
+        [userUpdate setValue:user.repos_url forKey:@"repos_url"];
+        [userUpdate setValue:user.blog forKey:@"blog"];
+        [userUpdate setValue:user.location forKey:@"location"];
+        [userUpdate setValue:user.created_at forKey:@"created_at"];
+    }
     
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
