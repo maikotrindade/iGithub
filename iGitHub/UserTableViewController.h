@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "User.h"
+
+@class UserTableViewController;
+@protocol UserTableViewControllerDelegate <NSObject>
+- (void) openGetInfoScreen: (UserTableViewController *) sender withUser:(User *)user;
+@end
 
 @interface UserTableViewController : UITableViewController
+
+@property (nonatomic, weak) id <UserTableViewControllerDelegate> navDelegate;
 
 @property (strong, nonatomic) NSMutableArray *usersTableData;
 

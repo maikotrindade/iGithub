@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -11,31 +11,43 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UsersCell" rowHeight="60" id="KGk-i7-Jjw" customClass="UsersTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="344" height="60"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UsersTableViewCell" rowHeight="48" id="KGk-i7-Jjw" customClass="UsersTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="49"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="344" height="60"/>
+                <rect key="frame" x="0.0" y="0.0" width="344" height="48"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Js0-B1-BNG">
-                        <rect key="frame" x="0.0" y="12" width="344" height="36.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="32" y="14.5" width="248" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                        <color key="textColor" red="0.4549019608" green="0.43921568630000002" blue="0.47058823529999999" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_right" highlightedImage="arrow_right" translatesAutoresizingMaskIntoConstraints="NO" id="0yY-HJ-A1P">
+                        <rect key="frame" x="296" y="16.5" width="16" height="16"/>
+                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="16" id="8Od-AF-Bic"/>
+                            <constraint firstAttribute="height" constant="16" id="pS0-DQ-6Sh"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="Js0-B1-BNG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="MTE-8o-mKe"/>
-                    <constraint firstAttribute="bottom" secondItem="Js0-B1-BNG" secondAttribute="bottom" constant="11" id="aai-xh-pk8"/>
-                    <constraint firstAttribute="trailing" secondItem="Js0-B1-BNG" secondAttribute="trailing" id="mjw-M6-I4e"/>
-                    <constraint firstItem="Js0-B1-BNG" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="rlJ-nV-gZW"/>
+                    <constraint firstItem="0yY-HJ-A1P" firstAttribute="centerY" secondItem="Js0-B1-BNG" secondAttribute="centerY" id="E9C-Ar-cp9"/>
+                    <constraint firstAttribute="trailing" secondItem="0yY-HJ-A1P" secondAttribute="trailing" constant="32" id="SnU-iS-8C7"/>
+                    <constraint firstItem="Js0-B1-BNG" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="32" id="cBp-dI-vwB"/>
+                    <constraint firstItem="0yY-HJ-A1P" firstAttribute="leading" secondItem="Js0-B1-BNG" secondAttribute="trailing" constant="16" id="irt-5w-wrD"/>
+                    <constraint firstItem="Js0-B1-BNG" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tuF-gS-lkB"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
                 <outlet property="lblUsername" destination="Js0-B1-BNG" id="LHu-tR-toU"/>
             </connections>
-            <point key="canvasLocation" x="37" y="60"/>
+            <point key="canvasLocation" x="37" y="54.5"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="arrow_right" width="171" height="171"/>
+    </resources>
 </document>

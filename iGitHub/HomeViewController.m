@@ -18,7 +18,7 @@
 
 @end
 
-@implementation HomeViewController
+@implementation HomeViewController 
 
 NSManagedObjectContext *managedObjectContext;
 
@@ -34,9 +34,19 @@ NSManagedObjectContext *managedObjectContext;
 
 -(void) bindUsersTableView {
     UserTableViewController *tableViewController = [[UserTableViewController alloc] init];
+    //workaround for registering tableview inside another view controller
+    [usersTableView registerNib:[UINib nibWithNibName:@"UsersTableViewCell" bundle:nil] forCellReuseIdentifier:@"UsersTableViewCell"];
     tableViewController.usersTableData = users;
     usersTableView.dataSource = tableViewController;
     usersTableView.delegate = tableViewController;
+    [self addChildViewController:tableViewController];
+    [usersTableView reloadData];
+    tableViewController.navDelegate = self;
+}
+
+- (void) openGetInfoScreen: (UserTableViewController *) sender withUser:(User *)userSelected{
+    self.user = userSelected;
+    [self performSegueWithIdentifier:@"HomeScreenToGetInfoScreen" sender:self];
 }
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

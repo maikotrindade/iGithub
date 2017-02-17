@@ -9,6 +9,7 @@
 #import "UserTableViewController.h"
 #import "User.h"
 #import "UsersTableViewCell.h"
+#import "GetInfoViewController.h"
 
 @interface UserTableViewController ()
 
@@ -18,25 +19,18 @@
 
 @synthesize usersTableData;
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    [self.tableView registerNib:[UINib nibWithNibName:@"UsersTableViewCell" bundle:nil] forCellReuseIdentifier:@"UsersCell"];
-    [self.tableView reloadData];
-    
-}
-
 #pragma mark - Table view data source
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UsersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UsersCell"];
+    UsersTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"UsersTableViewCell"];
     
     if (cell == nil) {
-        cell = [[UsersTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UsersCell"];
+        cell = [[UsersTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"UsersTableViewCell"];
     }
     
     User *user = [usersTableData objectAtIndex:indexPath.row];
-    cell.lblUsername.text = @"Maiko";
+    cell.lblUsername.text = user.name;
     return cell;
 }
 
@@ -45,7 +39,14 @@
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 84.f;
+    return 48.f;
 }
 
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    User *user = [usersTableData objectAtIndex:indexPath.row];
+    [self.navDelegate openGetInfoScreen:self withUser:user];
+}
+        
+
+         
 @end

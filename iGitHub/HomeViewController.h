@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "User.h"
-@interface HomeViewController : UIViewController
+#import "UserTableViewController.h"
+
+@interface HomeViewController : UIViewController <UserTableViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UITextField *txtFldUsername;
 @property (nonatomic, strong) User *user;
