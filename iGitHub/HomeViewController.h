@@ -15,7 +15,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *txtFldUsername;
 @property (nonatomic, strong) User *user;
 @property (strong) NSMutableArray *users;
-
+@property (strong) NSString *filePath;
 @property (strong, nonatomic) IBOutlet UITableView *usersTableView;
 
 

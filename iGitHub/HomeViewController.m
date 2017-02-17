@@ -22,7 +22,7 @@
 
 NSManagedObjectContext *managedObjectContext;
 
-@synthesize txtFldUsername, user, users, usersTableView;
+@synthesize txtFldUsername, user, users, usersTableView, filePath;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -53,6 +53,7 @@ NSManagedObjectContext *managedObjectContext;
     if ([segue.identifier isEqualToString:@"HomeScreenToGetInfoScreen"] == YES) {
         GetInfoViewController *controller = segue.destinationViewController;
         controller.user = self.user;
+        controller.filePath = self.filePath;
     }
 }
 
@@ -64,13 +65,30 @@ NSManagedObjectContext *managedObjectContext;
     
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         self.user = [User parse:responseObject];
+        [self getPictureWithURL:user.avatar_url];
         [self saveUser];
-        [self performSegueWithIdentifier:@"HomeScreenToGetInfoScreen" sender:self];
-        [self stopProgress];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         [self stopProgress];
         [self showErrorMessage];
     }];
+}
+
+- (void) getPictureWithURL:(NSString *)pictureURL {
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    AFURLSessionManager *manager = [[AFURLSessionManager alloc] initWithSessionConfiguration:configuration];
+    
+    NSURL *URL = [NSURL URLWithString:pictureURL];
+    NSURLRequest *request = [NSURLRequest requestWithURL:URL];
+    
+    NSURLSessionDownloadTask *downloadTask = [manager downloadTaskWithRequest:request progress:nil destination:^NSURL *(NSURL *targetPath, NSURLResponse *response) {
+        NSURL *documentsDirectoryURL = [[NSFileManager defaultManager] URLForDirectory:NSDocumentDirectory inDomain:NSUserDomainMask appropriateForURL:nil create:NO error:nil];
+        return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
+    } completionHandler:^(NSURLResponse *response, NSURL *filePathUrl, NSError *error) {
+        self.filePath = [filePathUrl path];
+        [self performSegueWithIdentifier:@"HomeScreenToGetInfoScreen" sender:self];
+        [self stopProgress];
+    }];
+    [downloadTask resume];
 }
 
 -(void) showProgress {

@@ -18,7 +18,7 @@
 
 @implementation GetInfoViewController 
 
-@synthesize user, lblName, lblBiography, lblLocation, lblBlog, lblCreatedAt, lblGitHub, lblFollowers;
+@synthesize user, lblName, lblBiography, lblLocation, lblBlog, lblCreatedAt, lblGitHub, lblFollowers, filePath, imgProfilePicture;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -50,6 +50,13 @@
         }
     } else {
         [self showErrorMessage];
+    }
+    
+    if (filePath) {
+        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+        imgProfilePicture.image = image;
+        imgProfilePicture.layer.cornerRadius = imgProfilePicture.frame.size.width / 2;
+        imgProfilePicture.clipsToBounds = YES;
     }
     
 }

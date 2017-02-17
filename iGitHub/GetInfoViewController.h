@@ -18,7 +18,9 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblBlog;
 @property (strong, nonatomic) IBOutlet UILabel *lblGitHub;
 @property (strong, nonatomic) IBOutlet UILabel *lblFollowers;
+@property (strong, nonatomic) IBOutlet UIImageView *imgProfilePicture;
 
 @property (nonatomic, strong) User *user;
+@property (strong) NSString *filePath;
 
 @end

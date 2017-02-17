@@ -230,6 +230,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="imgProfilePicture" destination="Lh0-85-Mau" id="J8m-Oq-Ksz"/>
                         <outlet property="lblBiography" destination="0YN-hq-ZQg" id="iiN-KH-ADb"/>
                         <outlet property="lblBlog" destination="rkX-RQ-sM0" id="8wF-BD-1vC"/>
                         <outlet property="lblCreatedAt" destination="IaM-mg-LaF" id="UJs-pA-1gg"/>
