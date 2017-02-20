@@ -1,26 +1,25 @@
 //
-//  RepoTableViewController.m
+//  RepoViewController.m
 //  iGitHub
 //
-//  Created by Maiko Trindade on 01/02/17.
+//  Created by Maiko Trindade on 20/02/17.
 //  Copyright © 2017 Maiko Trindade. All rights reserved.
 //
 
-#import "RepoTableViewController.h"
+#import "RepoViewController.h"
 #import "ReposTableViewCell.h"
 #import "Repo.h"
 
-@interface RepoTableViewController ()
+@interface RepoViewController ()
 
 @end
 
-@implementation RepoTableViewController
+@implementation RepoViewController
 
 @synthesize tableData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ReposTableViewCell" bundle:nil] forCellReuseIdentifier:@"repoCell"];
     [self.tableView reloadData];
 }
 
@@ -29,7 +28,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     ReposTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"repoCell"];
-
+    
     if (cell == nil) {
         cell = [[ReposTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"repoCell"];
     }

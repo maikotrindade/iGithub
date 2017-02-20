@@ -15,6 +15,8 @@
 		471F48DA1E3697FE00C680AA /* iGitHub.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 471F48D81E3697FE00C680AA /* iGitHub.xcdatamodeld */; };
 		471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DB1E3697FE00C680AA /* Assets.xcassets */; };
 		471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 471F48DD1E3697FE00C680AA /* LaunchScreen.storyboard */; };
+		4748C5291E5B5366003140B8 /* RepoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4748C5271E5B5366003140B8 /* RepoViewController.m */; };
+		4748C52A1E5B5366003140B8 /* RepoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4748C5281E5B5366003140B8 /* RepoViewController.xib */; };
 		4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */; };
 		478052D51E52367300417D06 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 478052D41E52367300417D06 /* CoreData.framework */; };
 		4780561C1E5624E800A0BA4B /* UserTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4780561B1E5624E800A0BA4B /* UserTableViewController.m */; };
@@ -23,8 +25,6 @@
 		478370F91E4E52150005F587 /* AppUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 478370F81E4E52150005F587 /* AppUtility.m */; };
 		479223821E421F1500674AFB /* ReposTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 479223801E421F1500674AFB /* ReposTableViewCell.m */; };
 		479223831E421F1500674AFB /* ReposTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479223811E421F1500674AFB /* ReposTableViewCell.xib */; };
-		479223881E421F7600674AFB /* RepoTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 479223861E421F7600674AFB /* RepoTableViewController.m */; };
-		479223891E421F7600674AFB /* RepoTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 479223871E421F7600674AFB /* RepoTableViewController.xib */; };
 		4792238C1E4220A000674AFB /* Repo.m in Sources */ = {isa = PBXBuildFile; fileRef = 4792238B1E4220A000674AFB /* Repo.m */; };
 		47AE002E1E3FE8F10037824C /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 47AE002D1E3FE8F10037824C /* User.m */; };
 /* End PBXBuildFile section */
@@ -74,6 +74,9 @@
 		471F48DB1E3697FE00C680AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		471F48DE1E3697FE00C680AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		471F48E01E3697FE00C680AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4748C5261E5B5366003140B8 /* RepoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoViewController.h; sourceTree = "<group>"; };
+		4748C5271E5B5366003140B8 /* RepoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoViewController.m; sourceTree = "<group>"; };
+		4748C5281E5B5366003140B8 /* RepoViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoViewController.xib; sourceTree = "<group>"; };
 		4767192D1E3BE3E6006B9344 /* GetInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetInfoViewController.h; sourceTree = "<group>"; };
 		4767192E1E3BE3E6006B9344 /* GetInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetInfoViewController.m; sourceTree = "<group>"; };
 		478052D41E52367300417D06 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -88,9 +91,6 @@
 		4792237F1E421F1500674AFB /* ReposTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReposTableViewCell.h; sourceTree = "<group>"; };
 		479223801E421F1500674AFB /* ReposTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ReposTableViewCell.m; sourceTree = "<group>"; };
 		479223811E421F1500674AFB /* ReposTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReposTableViewCell.xib; sourceTree = "<group>"; };
-		479223851E421F7600674AFB /* RepoTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RepoTableViewController.h; sourceTree = "<group>"; };
-		479223861E421F7600674AFB /* RepoTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepoTableViewController.m; sourceTree = "<group>"; };
-		479223871E421F7600674AFB /* RepoTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RepoTableViewController.xib; sourceTree = "<group>"; };
 		4792238A1E4220A000674AFB /* Repo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Repo.h; sourceTree = "<group>"; };
 		4792238B1E4220A000674AFB /* Repo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Repo.m; sourceTree = "<group>"; };
 		47AE002D1E3FE8F10037824C /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
@@ -202,9 +202,9 @@
 				4792237F1E421F1500674AFB /* ReposTableViewCell.h */,
 				479223801E421F1500674AFB /* ReposTableViewCell.m */,
 				479223811E421F1500674AFB /* ReposTableViewCell.xib */,
-				479223851E421F7600674AFB /* RepoTableViewController.h */,
-				479223861E421F7600674AFB /* RepoTableViewController.m */,
-				479223871E421F7600674AFB /* RepoTableViewController.xib */,
+				4748C5261E5B5366003140B8 /* RepoViewController.h */,
+				4748C5271E5B5366003140B8 /* RepoViewController.m */,
+				4748C5281E5B5366003140B8 /* RepoViewController.xib */,
 			);
 			name = repositories_screen;
 			sourceTree = "<group>";
@@ -365,9 +365,9 @@
 			files = (
 				471F48DF1E3697FE00C680AA /* LaunchScreen.storyboard in Resources */,
 				471F48DC1E3697FE00C680AA /* Assets.xcassets in Resources */,
+				4748C52A1E5B5366003140B8 /* RepoViewController.xib in Resources */,
 				478056251E56466800A0BA4B /* UsersTableViewCell.xib in Resources */,
 				471F48D71E3697FD00C680AA /* Main.storyboard in Resources */,
-				479223891E421F7600674AFB /* RepoTableViewController.xib in Resources */,
 				479223831E421F1500674AFB /* ReposTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -428,7 +428,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				471F48DA1E3697FE00C680AA /* iGitHub.xcdatamodeld in Sources */,
-				479223881E421F7600674AFB /* RepoTableViewController.m in Sources */,
 				478370F91E4E52150005F587 /* AppUtility.m in Sources */,
 				479223821E421F1500674AFB /* ReposTableViewCell.m in Sources */,
 				4792238C1E4220A000674AFB /* Repo.m in Sources */,
@@ -439,6 +438,7 @@
 				471F48CE1E3697FD00C680AA /* main.m in Sources */,
 				4767192F1E3BE3E6006B9344 /* GetInfoViewController.m in Sources */,
 				4780561C1E5624E800A0BA4B /* UserTableViewController.m in Sources */,
+				4748C5291E5B5366003140B8 /* RepoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

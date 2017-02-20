@@ -10,7 +10,7 @@
 #import "AFHTTPSessionManager.h"
 #import "User.h"
 #import "Repo.h"
-#import "RepoTableViewController.h"
+#import "RepoViewController.h"
 
 @interface GetInfoViewController ()
 
@@ -104,7 +104,7 @@
     [manager GET:reposUrl parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         NSArray *responseArray = responseObject;
 
-        RepoTableViewController *controller = [[RepoTableViewController alloc] initWithNibName:@"RepoTableViewController" bundle:nil];
+        RepoViewController *controller = [[RepoViewController alloc] initWithNibName:@"RepoViewController" bundle:nil];
         [controller setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         controller.tableData = [[NSMutableArray alloc] initWithArray:[Repo parse:responseArray]];
         [self presentViewController:controller animated:YES completion:nil];
@@ -114,6 +114,11 @@
         [self showErrorMessage];
     }];
     
+}
+
+
+- (IBAction)backButtonTapped:(id)sender {
+   [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

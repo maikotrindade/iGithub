@@ -9,5 +9,7 @@
 #ifndef ConstantsUtil_h
 #define ConstantsUtil_h
 
+#define myColor [UIColor colorWithRed:255.0/255.0 green:255.0/255.0 blue:255.0/255.0 alpha:1.0]
+
 #endif /* ConstantsUtil_h */
 
