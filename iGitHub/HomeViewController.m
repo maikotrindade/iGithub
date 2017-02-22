@@ -27,11 +27,16 @@ NSManagedObjectContext *managedObjectContext;
     [super viewDidLoad];
     
     managedObjectContext = [AppDelegate getManagedContext];
-    [self getUsers];
+    [self bindUsersTableView];
+}
+
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     [self bindUsersTableView];
 }
 
 -(void) bindUsersTableView {
+    [self getUsers];
     UserTableViewController *tableViewController = [[UserTableViewController alloc] init];
     //workaround for registering tableview inside another view controller
     [usersTableView registerNib:[UINib nibWithNibName:@"UsersTableViewCell" bundle:nil] forCellReuseIdentifier:@"UsersTableViewCell"];
