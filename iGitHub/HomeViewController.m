@@ -8,12 +8,10 @@
 
 #import "HomeViewController.h"
 #import "GetInfoViewController.h"
-#import "ConstantsUtil.h"
 #import "AFHTTPSessionManager.h"
 #import <CoreData/CoreData.h>
 #import "AppDelegate.h"
 #import "UserTableViewController.h"
-#import "ConstantsUtil.h"
 
 @interface HomeViewController ()
 
@@ -95,10 +93,32 @@ NSManagedObjectContext *managedObjectContext;
 -(void) showProgress {
     UIActivityIndicatorView *spinner = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
     spinner.tag = 666;
+    spinner.transform = CGAffineTransformMakeScale(1.8, 1.8);
+    spinner.color = [UIColor colorWithRed:41.0f/255.0f
+                                    green:98.0f/255.0f
+                                     blue:255.0f/255.0f
+                                    alpha:1.0f];
     CGPoint centerImageView = spinner.center;
     centerImageView.x = self.view.center.x;
     centerImageView.y = self.view.center.y;
     spinner.center = centerImageView;
+    
+    UIView *squareView = [[UIView alloc] initWithFrame:CGRectMake(60,60,60,60)];
+    squareView.tag = 667;
+    squareView.backgroundColor = [UIColor colorWithRed:41.0f/255.0f
+                                                 green:98.0f/255.0f
+                                                  blue:255.0f/255.0f
+                                                 alpha:0.5f];
+    squareView.layer.borderColor = [[UIColor colorWithRed:41.0f/255.0f
+                                                    green:98.0f/255.0f
+                                                     blue:255.0f/255.0f
+                                                    alpha:0.5f] CGColor];
+    squareView.layer.borderWidth = 1.5;
+    squareView.layer.cornerRadius = 7;
+    squareView.layer.masksToBounds = YES;
+    squareView.center = centerImageView;
+    
+    [self.view addSubview:squareView];
     [self.view addSubview:spinner];
     [spinner startAnimating];
 }
@@ -155,7 +175,8 @@ NSManagedObjectContext *managedObjectContext;
 }
 
 -(void) stopProgress {
-    [[self.view viewWithTag:666] stopAnimating];
+    [[self.view viewWithTag:666] removeFromSuperview];
+    [[self.view viewWithTag:667] removeFromSuperview];
 }
 
 -(void) showErrorMessage {

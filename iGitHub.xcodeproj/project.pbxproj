@@ -85,7 +85,6 @@
 		478056211E56466800A0BA4B /* UsersTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewCell.h; sourceTree = "<group>"; };
 		478056221E56466800A0BA4B /* UsersTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewCell.m; sourceTree = "<group>"; };
 		478056231E56466800A0BA4B /* UsersTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UsersTableViewCell.xib; sourceTree = "<group>"; };
-		478370F21E4E3A330005F587 /* ConstantsUtil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ConstantsUtil.h; sourceTree = "<group>"; };
 		478370F81E4E52150005F587 /* AppUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppUtility.m; sourceTree = "<group>"; };
 		478370FA1E4E52B10005F587 /* AppUtility.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppUtility.h; sourceTree = "<group>"; };
 		4792237F1E421F1500674AFB /* ReposTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReposTableViewCell.h; sourceTree = "<group>"; };
@@ -229,7 +228,6 @@
 		47AE00281E3FE5420037824C /* utility */ = {
 			isa = PBXGroup;
 			children = (
-				478370F21E4E3A330005F587 /* ConstantsUtil.h */,
 				478370F81E4E52150005F587 /* AppUtility.m */,
 				478370FA1E4E52B10005F587 /* AppUtility.h */,
 			);
