@@ -20,6 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.tableView.dataSource = self;
+    self.tableView.delegate = self;
     [self.tableView reloadData];
 }
 
@@ -27,10 +29,10 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    ReposTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"repoCell"];
+    ReposTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"ReposTableViewCell"];
     
     if (cell == nil) {
-        cell = [[ReposTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"repoCell"];
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"ReposTableViewCell" owner:nil options:nil] objectAtIndex: 0];
     }
     
     Repo *repo = [tableData objectAtIndex:indexPath.row];
@@ -41,6 +43,7 @@
     
     double sizeInMB = [repo.size integerValue]/1024.0;
     cell.lblSize.text = [NSString stringWithFormat:@"%@%@", [NSString stringWithFormat:@"%.1lf", sizeInMB], @" megabytes"];
+    
     return cell;
 }
 
@@ -52,6 +55,9 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 124.f;
+}
+- (IBAction)backButtonTapped:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end

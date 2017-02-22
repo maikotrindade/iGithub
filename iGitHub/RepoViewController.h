@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface RepoViewController : UIViewController
+@interface RepoViewController : UIViewController <UITableViewDelegate, UITableViewDataSource>
 
 @property (strong, nonatomic) NSMutableArray *tableData;
 @property (strong, nonatomic) IBOutlet UITableView *tableView;

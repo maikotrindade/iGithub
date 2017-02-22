@@ -36,6 +36,9 @@
                                     <rect key="frame" x="16" y="27" width="83" height="30"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <state key="normal" title="Back"/>
+                                    <connections>
+                                        <action selector="backButtonTapped:" destination="-1" eventType="touchUpInside" id="zf0-vM-Qn5"/>
+                                    </connections>
                                 </button>
                             </barButtonItem>
                         </navigationItem>

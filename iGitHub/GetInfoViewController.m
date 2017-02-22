@@ -107,6 +107,7 @@
         RepoViewController *controller = [[RepoViewController alloc] initWithNibName:@"RepoViewController" bundle:nil];
         [controller setModalTransitionStyle:UIModalTransitionStyleCoverVertical];
         controller.tableData = [[NSMutableArray alloc] initWithArray:[Repo parse:responseArray]];
+        [self stopProgress];
         [self presentViewController:controller animated:YES completion:nil];
         
     } failure:^(NSURLSessionTask *operation, NSError *error) {
