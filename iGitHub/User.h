@@ -11,6 +11,7 @@
 @interface User : NSObject
 
 @property(strong, nonatomic) NSString *_id;
+@property(strong, nonatomic) NSString *login;
 @property(strong, nonatomic) NSString *name;
 @property(strong, nonatomic) NSString *avatar_url;
 @property(strong, nonatomic) NSString *html_url;

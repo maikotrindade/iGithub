@@ -30,7 +30,12 @@
     }
     
     User *user = [usersTableData objectAtIndex:indexPath.row];
-    cell.lblUsername.text = user.name;
+    
+    if(user.name.length) {
+        cell.lblUsername.text = user.name;
+    } else {
+        cell.lblUsername.text = user.login;
+    }
     return cell;
 }
 
@@ -47,6 +52,4 @@
     [self.navDelegate openGetInfoScreen:self withUser:user];
 }
         
-
-         
 @end

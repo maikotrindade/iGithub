@@ -56,10 +56,10 @@ NSManagedObjectContext *managedObjectContext;
     }
 }
 
-- (void) getInfo {
+- (void) getInfoWithUser :(NSString *) username {
     [self showProgress];
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
-    NSString *username = username = txtFldUsername.text;;
+
     NSString *url = [NSString stringWithFormat:@"%@%@", @"https://api.github.com/users/", username];
     
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
@@ -68,7 +68,7 @@ NSManagedObjectContext *managedObjectContext;
         [self saveUser];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         [self stopProgress];
-        [self showErrorMessage];
+        [self showError];
     }];
 }
 
@@ -134,6 +134,7 @@ NSManagedObjectContext *managedObjectContext;
         NSManagedObject *userManagedObj = [NSEntityDescription insertNewObjectForEntityForName:@"User_Table" inManagedObjectContext:managedObjectContext];
         [userManagedObj setValue:user._id forKey:@"id"];
         [userManagedObj setValue:user.name forKey:@"name"];
+        [userManagedObj setValue:user.login forKey:@"login"];
         [userManagedObj setValue:user.followers forKey:@"followers"];
         [userManagedObj setValue:user.avatar_url forKey:@"avatar_url"];
         [userManagedObj setValue:user.html_url forKey:@"html_url"];
@@ -146,6 +147,7 @@ NSManagedObjectContext *managedObjectContext;
         User *userUpdate = usersAlreadyDB[0];
         [userUpdate setValue:user._id forKey:@"id"];
         [userUpdate setValue:user.name forKey:@"name"];
+        [userUpdate setValue:user.login forKey:@"login"];
         [userUpdate setValue:user.followers forKey:@"followers"];
         [userUpdate setValue:user.avatar_url forKey:@"avatar_url"];
         [userUpdate setValue:user.html_url forKey:@"html_url"];
@@ -159,19 +161,14 @@ NSManagedObjectContext *managedObjectContext;
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
-        [self showErrorMessage];
-    } else {
-        NSLog(@"User %@ saved successfully", user.name);
+        [self showError];
     }
-    
 }
 
 - (void) getUsers {
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User_Table"];
-    //[fetchRequest setPredicate:[NSPredicate predicateWithFormat:@"name == %@", @"Maiko Trindade"]];
     self.users = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
-    //[self.tableView reloadData];
 }
 
 -(void) stopProgress {
@@ -179,7 +176,7 @@ NSManagedObjectContext *managedObjectContext;
     [[self.view viewWithTag:667] removeFromSuperview];
 }
 
--(void) showErrorMessage {
+-(void) showError {
     UIAlertController * alert = [UIAlertController
                                  alertControllerWithTitle:@"Error"
                                  message:@"Something unexpected happened"
@@ -196,8 +193,36 @@ NSManagedObjectContext *managedObjectContext;
     [self presentViewController:alert animated:YES completion:nil];
 }
 
+-(void) showErrorWithMessage : (NSString *)message withTitle:(NSString *)title {
+    UIAlertController * alert = [UIAlertController
+                                 alertControllerWithTitle:title
+                                 message:message
+                                 preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okButton = [UIAlertAction
+                               actionWithTitle:@"Okay"
+                               style:UIAlertActionStyleDefault
+                               handler:^(UIAlertAction * action) {
+                               }];
+    
+    [alert addAction:okButton];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
+
 - (IBAction)getInfoButtonTapped:(id)sender {
-    [self getInfo];
+    //trimming string
+    NSString *username = username = [txtFldUsername.text stringByTrimmingCharactersInSet:
+                                     [NSCharacterSet whitespaceCharacterSet]];
+    if (username.length) {
+      [self getInfoWithUser:username];
+    } else {
+        [self showErrorWithMessage:@"Please, fill all required fields" withTitle:@"Error"];
+    }
+}
+
+- (IBAction)exitButtonTapped:(id)sender {
+    exit(0);
 }
 
 
