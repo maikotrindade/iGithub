@@ -52,13 +52,21 @@
         [self showErrorMessage];
     }
     
-    if (filePath) {
-        UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+    //imageProfile settings
+    imgProfilePicture.layer.cornerRadius = imgProfilePicture.frame.size.width / 2;
+    imgProfilePicture.clipsToBounds = YES;
+    if (user.image_path) {
+        UIImage *image = [UIImage imageWithContentsOfFile:user.image_path];
         imgProfilePicture.image = image;
-        imgProfilePicture.layer.cornerRadius = imgProfilePicture.frame.size.width / 2;
-        imgProfilePicture.clipsToBounds = YES;
+    } else {
+        if (filePath) {
+            UIImage *image = [UIImage imageWithContentsOfFile:filePath];
+            imgProfilePicture.image = image;
+        } else {
+            UIImage *image = [UIImage imageNamed:@"user"];
+            imgProfilePicture.image = image;
+        }
     }
-    
 }
 
 -(void) showProgress {

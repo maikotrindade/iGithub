@@ -8,12 +8,13 @@
         <attribute name="followers" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="html_url" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image_path" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="location" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="login" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="repos_url" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User_Table" positionX="-63" positionY="-90" width="128" height="210"/>
+        <element name="User_Table" positionX="-63" positionY="-90" width="128" height="225"/>
     </elements>
 </model>

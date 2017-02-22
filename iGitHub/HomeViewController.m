@@ -70,7 +70,6 @@ NSManagedObjectContext *managedObjectContext;
     [manager GET:url parameters:nil progress:nil success:^(NSURLSessionTask *task, id responseObject) {
         self.user = [User parse:responseObject];
         [self getPictureWithURL:user.avatar_url];
-        [self saveUser];
     } failure:^(NSURLSessionTask *operation, NSError *error) {
         [self stopProgress];
         [self showError];
@@ -89,7 +88,9 @@ NSManagedObjectContext *managedObjectContext;
         return [documentsDirectoryURL URLByAppendingPathComponent:[response suggestedFilename]];
     } completionHandler:^(NSURLResponse *response, NSURL *filePathUrl, NSError *error) {
         self.filePath = [filePathUrl path];
+        self.user.image_path = [filePathUrl path];
         [self performSegueWithIdentifier:@"HomeScreenToGetInfoScreen" sender:self];
+        [self saveUser];
         [self stopProgress];
     }];
     [downloadTask resume];
@@ -140,6 +141,7 @@ NSManagedObjectContext *managedObjectContext;
         [userManagedObj setValue:user._id forKey:@"id"];
         [userManagedObj setValue:user.name forKey:@"name"];
         [userManagedObj setValue:user.login forKey:@"login"];
+        [userManagedObj setValue:user.image_path forKey:@"image_path"];
         [userManagedObj setValue:user.followers forKey:@"followers"];
         [userManagedObj setValue:user.avatar_url forKey:@"avatar_url"];
         [userManagedObj setValue:user.html_url forKey:@"html_url"];
@@ -153,6 +155,7 @@ NSManagedObjectContext *managedObjectContext;
         [userUpdate setValue:user._id forKey:@"id"];
         [userUpdate setValue:user.name forKey:@"name"];
         [userUpdate setValue:user.login forKey:@"login"];
+        [userUpdate setValue:user.image_path forKey:@"image_path"];
         [userUpdate setValue:user.followers forKey:@"followers"];
         [userUpdate setValue:user.avatar_url forKey:@"avatar_url"];
         [userUpdate setValue:user.html_url forKey:@"html_url"];
@@ -162,7 +165,7 @@ NSManagedObjectContext *managedObjectContext;
         [userUpdate setValue:user.location forKey:@"location"];
         [userUpdate setValue:user.created_at forKey:@"created_at"];
     }
-    
+
     NSError *error = nil;
     if (![managedObjectContext save:&error]) {
         NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
@@ -171,7 +174,6 @@ NSManagedObjectContext *managedObjectContext;
 }
 
 - (void) getUsers {
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] initWithEntityName:@"User_Table"];
     self.users = [[managedObjectContext executeFetchRequest:fetchRequest error:nil] mutableCopy];
 }
@@ -192,7 +194,6 @@ NSManagedObjectContext *managedObjectContext;
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                }];
-    
     [alert addAction:okButton];
     
     [self presentViewController:alert animated:YES completion:nil];
@@ -209,7 +210,6 @@ NSManagedObjectContext *managedObjectContext;
                                style:UIAlertActionStyleDefault
                                handler:^(UIAlertAction * action) {
                                }];
-    
     [alert addAction:okButton];
     
     [self presentViewController:alert animated:YES completion:nil];
